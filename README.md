@@ -66,3 +66,28 @@ git commit -m "any_message"
 ```
 git log
 ```
+
+## To send version / changes to github repo
+origin --> current git repo's remote url
+```
+git push origin main
+```
+
+## To Check remote url
+```
+git remote -v
+```
+
+## To download files form remote url
+```
+git pull
+```
+OR
+```
+git fetch
+```
+
+## To Check branch of the repo
+```
+git branch
+```
