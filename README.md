@@ -102,3 +102,23 @@ git branch
 docker build -t <image_name>:<tagname> .
 ```
 >> image_name is always "lowercase"
+
+## To list Docker image
+```
+docker images
+```
+
+## To run Docker image
+```
+docker run -p 5000:5000 -e PORT=5000 <image_id>
+```
+
+## To check running containers in Docker 
+```
+docker ps
+```
+
+## To stop container for running
+```
+docker stop <container_id>
+```
