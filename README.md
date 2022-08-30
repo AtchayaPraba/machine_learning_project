@@ -93,10 +93,9 @@ git branch
 ```
 
 ## To setup CI/CD pipeline we need three information form "heroku"
-1. HEROKU_EMAIL = atchayapraba93@gmial.com
-2. HEROKU_APP_KEY = d439ad07-f68c-4414-b355-de5bd5024e1e
-3. HEROKU_APP_NAME = ml-project-pipelines-1
-
+1. HEROKU_EMAIL = 
+2. HEROKU_APP_KEY = 
+3. HEROKU_APP_NAME = 
 ## Build Docker image
 ```
 docker build -t <image_name>:<tagname> .
