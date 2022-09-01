@@ -122,3 +122,8 @@ docker ps
 ```
 docker stop <container_id>
 ```
+
+## To install .ipynb kernel
+```
+pip install ipykernel
+```
