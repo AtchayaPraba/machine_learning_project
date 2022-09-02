@@ -1,6 +1,6 @@
 from collections import namedtuple
 
-DataIngestionConfig = namedtuple("DataIngestionConfig", ["dataset_download_ur1",
+DataIngestionConfig = namedtuple("DataIngestionConfig", ["dataset_download_url",
                                                          "tgz_download_dir",
                                                          "raw_data_dir",
                                                          "ingested_train_dir", 
@@ -19,4 +19,4 @@ ModelEvaluationConfig = namedtuple("ModelEvaluationConfig", ["trained_evaluation
 
 ModelPusherConfig = namedtuple("ModelPusherConfig", ["export_dir_path"])
 
-
+TrainingPipelineConfig = namedtuple("TrainingPipelineConfig", ["artifact_dir"])
