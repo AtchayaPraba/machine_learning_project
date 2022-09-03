@@ -1,4 +1,3 @@
-from numpy.lib.function_base import select
 from housing.config.configuration import Configuration
 from housing.logger import logging
 from housing.exception import HousingException
@@ -40,7 +39,7 @@ class Pipeline:
     def start_model_pusher(self) -> DataIngestionArtifact:
         pass
 
-    def run_pipeline():
+    def run_pipeline(self):
         try:
             # data ingestion 
             data_ingestion_artifact = self.start_data_ingestion()

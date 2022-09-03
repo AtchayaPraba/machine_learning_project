@@ -1,7 +1,3 @@
-import imp
-from operator import imod
-import re
-
 from numpy.lib.shape_base import split
 from housing.entity.config_entity import DataIngestionConfig
 from housing.exception import HousingException
@@ -18,7 +14,7 @@ class DataIngestion:
 
     def __init__(self, data_ingestion_config:DataIngestionConfig):
         try:
-            logging.info(f"{'='20}Data Ingestion log started{'='20}")
+            logging.info(f"Data Ingestion log started".center(100,"*"))
             self.data_ingestion_config = data_ingestion_config
         except Exception as e:
             raise HousingException(e,sys) from e
@@ -41,7 +37,7 @@ class DataIngestion:
             tgz_file_path = os.path.join(tgz_download_dir,housing_file_name)
 
             logging.info(f"Downloading file from: [{download_url}] into dir: [{tgz_file_path}]")
-            urllib.request.urlretrive(download_url, tgz_download_dir)
+            urllib.request.urlretrieve(download_url, tgz_file_path)
             logging.info(f"[{tgz_file_path}] has been downloaded successfully.")
             return tgz_file_path
         except Exception as e:
@@ -57,7 +53,7 @@ class DataIngestion:
             with tarfile.open(tgz_file_path) as housing_tgz_file_obj:
                  housing_tgz_file_obj.extractall(path=raw_data_dir)
             logging.info(f"Extraction of [{tgz_file_path}] is completed")
-        except:
+        except Exception as e:
             raise HousingException(e,sys) from e
 
     def split_data_as_train_test(self)->DataIngestionArtifact:
@@ -105,7 +101,7 @@ class DataIngestion:
                                                             )
             logging.info(f"Data Ingestion Artifact: [{data_ingestion_artifact}]")
             return data_ingestion_artifact
-        except:
+        except Exception as e:
             raise HousingException(e,sys) from e
     
 
@@ -118,4 +114,5 @@ class DataIngestion:
             raise HousingException(e,sys) from e
 
     def __del__(self):
-        logging.info(f"{"="20}Data Ingestion log completed.{"="20}\n\n")
+        logging.info(f"Data Ingestion log completed".center(100,"*"))
+
